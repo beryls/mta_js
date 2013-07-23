@@ -15,3 +15,9 @@ six_line = ['Grand Central',
           '23rd',
           'Union Square',
           'Astor Place'];
+
+var mta = {
+  n: n_line,
+  l: l_line,
+  six: six_line
+};
