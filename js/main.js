@@ -21,3 +21,26 @@ var mta = {
   l: l_line,
   six: six_line
 };
+
+var first_stop = '34th';
+var last_stop = 'Grand Central';
+var on_line = 'n';
+var off_line = 'six';
+
+if (on_line == off_line) {
+  var index_one = mta[on_line].indexOf(first_stop);
+  var index_two = mta[off_line].indexOf(last_stop);
+  var diff = Math.abs(index_one - index_two);
+} else {
+  var start_index = mta[on_line].indexOf(first_stop);
+  var union_first_index = mta[on_line].indexOf("Union Square");
+  var first_leg = Math.abs(start_index - union_first_index);
+
+  var union_second_index = mta[off_line].indexOf("Union Square");
+  var final_index = mta[off_line].indexOf(last_stop);
+  var second_leg = Math.abs(union_second_index - final_index);
+
+  var diff = (first_leg + second_leg);
+}
+
+console.log(diff);
